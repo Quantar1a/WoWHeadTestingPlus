@@ -38,3 +38,5 @@ build/
 .DS_Store
 /allure-results/
 /.allure/
+/src/test/java/demo/
+/src/test/resources/demo/

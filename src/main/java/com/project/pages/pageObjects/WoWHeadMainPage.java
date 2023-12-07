@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 @LastUpdatePoint("05.12.2023")
 public class WoWHeadMainPage extends BaseSeleniumPage implements PageObject
 {
-    private Locators locators;
+    private final Locators locators;
     public TodayInWoWPage todayInWoWPage;
 
     public WoWHeadMainPage()

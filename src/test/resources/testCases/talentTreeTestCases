@@ -1,0 +1,80 @@
+# Steps marked as S:
+# Expected results marked as R:
+
+Test case #talentTree.1 "Obtain recommended three talent for XX specialization"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User find "Talent tree" element on page, anc click on it
+   R: Panel with classes is appeared and displayed.
+3) S: User click on "Talent calculator" button
+   R: User see "Choose a class:" and class emblems
+4) S: User click on specific emblem of a class (for example warlock)
+   R: Below User see all specializations of a chosen class
+5) S: User click on specific specialization
+   R: User see empty talent tree of a chosen class
+6) S: User click on "Load/Export builds" button
+   R: User see a list of recommended talent builds
+7) S: User click on specific talent build
+   R: User see a filled talent tree
+      And "Required Level: " on class tree is 70
+      And "Required Level: " on specialization tree is 69
+      And "Pointed spent: " on class tree is 31/31
+      And "Pointed spent: " on specialization tree is 30/30
+
+
+Test case #talentTree.2 "Reset talent tree"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User find "Talent tree" element on page, anc click on it
+   R: Panel with classes is appeared and displayed.
+3) S: User click on "Talent calculator" button
+   R: User see "Choose a class:" and class emblems
+4) S: User click on specific emblem of a class (for example warlock)
+   R: Below User see all specializations of a chosen class
+5) S: User click on specific specialization
+   R: User see empty talent tree of a chosen class.
+      And User see "Pointed spent: 0/30" on class tree.
+      And User see "Pointed spent: 0/31" on a specialization tree.
+      And User see "Required Level: " on both three talent
+6) S: User select some talents on both tree branches.
+   R: Some talents marked as chosen.
+      And "Pointed spent: 0/31" and "Required Level: " in class tree changed on a count of chosen talents
+      And "Pointed spent: 0/30" and "Required Level: " in specialization tree changed on a count of chosen talents
+7) S: user click on "Reset" button.
+   R: Talented point are reseted.
+      And "Pointed spent: " in a class three is 0/31
+      And "Required Level: " is 10
+      And "Pointed spent: " in a specialization tree is 0/30
+      And "Required Level: " in a specialization tree is 11
+
+
+Test case #talentTree.3 "Select inaccessible talent"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User find "Talent tree" element on page, anc click on it
+   R: Panel with classes is appeared and displayed.
+3) S: User click on "Talent calculator" button
+   R: User see "Choose a class:" and class emblems
+4) S: User click on specific emblem of a class (for example warlock)
+   R: Below User see all specializations of a chosen class
+5) S: User click on specific specialization
+   R: User see empty talent tree of a chosen class.
+6) S: User click on any gray talent
+   R: Talent is not marked, talent point is not spent
+
+
+Test case #talentTree.4 "Switch talent tree for different class"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User find "Talent tree" element on page, anc click on it
+   R: Panel with classes is appeared and displayed.
+3) S: User click on "Talent calculator" button
+   R: User see "Choose a class:" and class emblems
+4) S: User click on specific emblem of a class (for example warlock)
+   R: Below User see all specializations of a chosen class
+5) S: User click on specific specialization
+   R: User see empty talent tree of a chosen class.
+6) S: User click on a different class icon above.
+   R: User see specializations of a selected class.
+7) S: User click on specific specialization
+   R: User see tree talent for another specialization.

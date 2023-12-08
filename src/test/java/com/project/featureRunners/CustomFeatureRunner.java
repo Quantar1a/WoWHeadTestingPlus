@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 @CucumberOptions(
         plugin = {"pretty",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/mainPageScenarios",
         glue = "com.project.stepDefinitions"
 )
 public class CustomFeatureRunner extends AbstractTestNGCucumberTests

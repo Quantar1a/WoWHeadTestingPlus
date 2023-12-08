@@ -1,30 +1,30 @@
 # Steps marked as S:
 # Expected results marked as R:
 
-Test case #1 "Check mythic+ affixes"
+Test case #mainPage.1 "Check mythic+ affixes"
 1) S: User open page "wowhead.com"
    R: Page is opened and loaded
-2) S: User click on the realm in "Today in WoW" section
+2) S: User click on the realm (for example EU) in "Today in WoW" section
    R: Realm is changed
 3) S: User see today`s mythic affixes
    R: Mythic affixes presents on page
 
 
-Test case #2 "Verify the Recent news section" (do it for every news in list)
+Test case #mainPage.2 "Verify the Recent news section" (do it for every news in list)
 1) S: User open page "wowhead.com"
    R: Page is opened and loaded
 2) S: User find "Recent news"
    R: "Recent news" is presented on page
-3) S: User remember the text of the first news
+3) S: User remember the text of the news (for example first in the list)
    R: The title of the news is remembered
-4) S: User click on the first news in section
+4) S: User click on the news in section
    R: New page with news is opened
 5) S: User verify if the remembered news title (from step 3) corresponding to the title of the opened page
    R: The news title and page title is equals each other
    R: A content on the news page is presented on the page
 
 
-Test case #3 "Verify the Blue tracker section" (do it for every news in list)
+Test case #mainPage.3 "Verify the Blue tracker section" (do it for every news in list)
 1) S: User open page "wowhead.com"
    R: Page is opened and loaded
 2) S: User find "Blue tracker"
@@ -38,4 +38,4 @@ Test case #3 "Verify the Blue tracker section" (do it for every news in list)
    R: A content on the news page is presented on the page
 
 
-Test case #4 ""
+Test case #mainPage.4 ""

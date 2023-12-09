@@ -1,7 +1,7 @@
 package com.project.stepDefinitions;
 
 import com.project.data.Configuration;
-import com.project.pages.BaseSeleniumPage;
+import com.project.pages.AbstractPage;
 import com.project.tools.annotations.LastUpdatePoint;
 import com.project.tools.classes.Setting;
 import io.cucumber.java.After;
@@ -22,7 +22,7 @@ public class Initialization
         Setting.setTimeouts(Configuration.pageLoadTimeout, Configuration.implicitlyWait);
         Setting.setWindowMode(Configuration.currentWindowMode);
         driver = Setting.obtainWebDriver();
-        BaseSeleniumPage.setWebDriver(driver);
+        AbstractPage.setWebDriver(driver);
     }
 
     @After

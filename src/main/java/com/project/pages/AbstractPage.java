@@ -3,8 +3,8 @@ package com.project.pages;
 import com.project.tools.annotations.LastUpdatePoint;
 import org.openqa.selenium.WebDriver;
 
-@LastUpdatePoint("05.12.2023")
-public abstract class BaseSeleniumPage
+@LastUpdatePoint("09.12.2023")
+public abstract class AbstractPage
 {
     protected static WebDriver webDriver;
 

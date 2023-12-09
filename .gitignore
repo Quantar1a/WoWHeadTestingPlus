@@ -40,3 +40,4 @@ build/
 /.allure/
 /src/test/java/demo/
 /src/test/resources/demo/
+/src/main/java/proto/

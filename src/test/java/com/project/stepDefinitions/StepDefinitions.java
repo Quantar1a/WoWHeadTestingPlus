@@ -20,13 +20,13 @@ public class StepDefinitions
         steps = new Steps();
     }
 
-    @Given("User is on wowhead.com main page")
+    @Given("User open page \"wowhead.com\"")
     public void isOnMainPage()
     {
         Setting.openURL(Data.WOWHEAD_URL);
     }
 
-    @When("User click on {string} in Today_in_WoW element")
+    @When("User click on the {string} in \"Today in WoW\" section")
     public void selectToken(String realm)
     {
         steps.clickToRealmSwitcher(realm);
@@ -36,5 +36,11 @@ public class StepDefinitions
     public void getTokenPrice(String string, String realm)
     {
         steps.getTokenPrice(string, realm);
+    }
+
+    @Then("User see {string} and list of affixes on {string}")
+    public void checkMythicAffixes(String title, String realm)
+    {
+        steps.checkMythicAffixes(title, realm);
     }
 }

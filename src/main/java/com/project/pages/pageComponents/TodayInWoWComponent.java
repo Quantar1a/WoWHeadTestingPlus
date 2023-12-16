@@ -7,6 +7,8 @@ import com.project.tools.classes.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 @LastUpdatePoint("09.12.2023")
 public class TodayInWoWComponent extends AbstractPage implements PageObject
 {
@@ -50,6 +52,30 @@ public class TodayInWoWComponent extends AbstractPage implements PageObject
         return string;
     }
 
+    public WebElement getMythicPlusTitleText(String realm)
+    {
+        WebElement title = null;
+        switch (realm)
+        {
+            case "NA" -> title = locators.mythicPlusAffixesNAText;
+            case "EU" -> title = locators.mythicPlusAffixesEUText;
+        }
+        return title;
+    }
+
+    public List<WebElement> getListOfMythicAffixes(String realm)
+    {
+        List<WebElement> list = null;
+        switch (realm)
+        {
+            case "NA" -> list = locators.NAMythicAffixesList;
+            case "EU" -> list = locators.EUMythicAffixesList;
+        }
+        return list;
+    }
+
+
+
     private class Locators extends AbstractLocators
     {
         public Locators()
@@ -74,5 +100,17 @@ public class TodayInWoWComponent extends AbstractPage implements PageObject
 
         @FindBy(xpath = "//section[@id='US-group-wow-token-price']//a[text()='WoW Token']")
         WebElement WOWTokenStringNA;
+
+        @FindBy(xpath = "//section[@id='US-group-mythicaffix']//a[@class=' tiw-group-name-link']")
+        WebElement mythicPlusAffixesNAText;
+
+        @FindBy(xpath = "//section[@id='EU-group-mythicaffix']//a[@class=' tiw-group-name-link']")
+        WebElement mythicPlusAffixesEUText;
+
+        @FindBy(xpath = "//section[contains(@id, \"US-group-mythicaffix-line-\")]")
+        List<WebElement> NAMythicAffixesList;
+
+        @FindBy(xpath = "//section[contains(@id, \"EU-group-mythicaffix-line-\")]")
+        List<WebElement> EUMythicAffixesList;
     }
 }

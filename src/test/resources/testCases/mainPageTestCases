@@ -1,7 +1,7 @@
 # Steps marked as S:
 # Expected results marked as R:
 
-Test case #mainPage.1 "Check mythic+ affixes"
+Test case #mainPage.1 "Check mythic+ affixes"   (implemented)
 1) S: User open page "wowhead.com"
    R: Page is opened and loaded
 2) S: User click on the realm (for example EU) in "Today in WoW" section

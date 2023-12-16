@@ -38,4 +38,19 @@ Test case #mainPage.3 "Verify the Blue tracker section" (do it for every news in
    R: A content on the news page is presented on the page
 
 
-Test case #mainPage.4 ""
+Test case #mainPage.4 "Verify type filter for news (for specific type)"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User find "WOW NEWS" section
+   R: Section is displayed
+3) S: User move cursor to "types" and click on uninteresting type of news (for example PTR")
+   R: News with selected type are disappeared
+
+
+Test case #mainPage.5 "Verify type filter for news (for all types)"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User find "WOW NEWS" section
+   R: Section is displayed
+3) S: User move cursor to "types" and click on all news types
+   R: News with all types are disappeared, no news are showed

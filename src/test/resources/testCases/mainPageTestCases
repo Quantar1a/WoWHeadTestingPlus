@@ -54,3 +54,22 @@ Test case #mainPage.5 "Verify type filter for news (for all types)"
    R: Section is displayed
 3) S: User move cursor to "types" and click on all news types
    R: News with all types are disappeared, no news are showed
+
+Test case #mainPage.6 "Check daily quest reset"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User click on the realm (for example EU) in "Today in WoW" section
+   R: Realm is changed
+3) S: User find "Daily quest reset" and its timer
+   R: Sing "Daily quest reset" and its timer are shown
+
+Test case #mainPage.6 "Check list of world boss"
+1) S: User open page "wowhead.com"
+   R: Page is opened and loaded
+2) S: User click on the realm (for example EU) in "Today in WoW" section
+   R: Realm is changed
+3) S: User find "DF world boss" and its list
+   R: Sing "DF world boss" and its timer are shown
+4) S: User click on the boss name
+   R: New page about this boss is opened.
+   R: And User see additional information: name, spawn location, lvl, required lvl, difficalty, when added, and type: Epic Elite World Quest

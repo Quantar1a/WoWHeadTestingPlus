@@ -55,6 +55,7 @@ Test case #mainPage.5 "Verify type filter for news (for all types)"
 3) S: User move cursor to "types" and click on all news types
    R: News with all types are disappeared, no news are showed
 
+
 Test case #mainPage.6 "Check daily quest reset"
 1) S: User open page "wowhead.com"
    R: Page is opened and loaded
@@ -62,6 +63,7 @@ Test case #mainPage.6 "Check daily quest reset"
    R: Realm is changed
 3) S: User find "Daily quest reset" and its timer
    R: Sing "Daily quest reset" and its timer are shown
+
 
 Test case #mainPage.6 "Check list of world boss"
 1) S: User open page "wowhead.com"

@@ -21,8 +21,6 @@ public class WoWHeadMainPage extends AbstractPage implements PageObject
         topPanelComponent = new TopPanelComponent();
     }
 
-
-
     private class Locators extends AbstractLocators
     {
         Locators()

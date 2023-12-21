@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = "src/test/resources/features/mainPageScenarios",
         glue = "com.project.stepDefinitions",
-        tags = "@Affixes"
+        tags = "@ListOfWorldBoss"
 )
 public class CustomFeatureRunner extends AbstractTestNGCucumberTests
 {

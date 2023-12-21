@@ -5,11 +5,12 @@ import com.project.steps.Steps;
 import com.project.tools.annotations.LastUpdatePoint;
 import com.project.tools.classes.Setting;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-@LastUpdatePoint("05.12.2023")
+@LastUpdatePoint("21.12.2023")
 public class StepDefinitions
 {
     Steps steps;
@@ -43,4 +44,23 @@ public class StepDefinitions
     {
         steps.checkMythicAffixes(title, realm);
     }
+
+    @And("User find {string} and its list")
+    public void findDFWorldBoss(String title)
+    {
+        steps.findDFWorldBossSection(title);
+    }
+
+    @And("User click on first boss name {string}")
+    public void userClickOnTheBossName(String realm)
+    {
+        steps.clickToFirstBossName(realm);
+    }
+
+    @And("New page about this boss is opened. User see name, spawn location, quick facts section")
+    public void checkWhatUserSee()
+    {
+        steps.bossPageIsOpened();
+    }
+
 }

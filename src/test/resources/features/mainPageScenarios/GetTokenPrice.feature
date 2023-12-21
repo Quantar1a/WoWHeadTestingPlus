@@ -1,5 +1,6 @@
 @UI
 @MainPageScenarios
+@TokenPrice
 
   Feature: Obtain token price
 

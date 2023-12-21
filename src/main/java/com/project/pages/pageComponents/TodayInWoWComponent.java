@@ -4,13 +4,15 @@ import com.project.pages.AbstractLocators;
 import com.project.pages.AbstractPage;
 import com.project.tools.annotations.LastUpdatePoint;
 import com.project.tools.classes.PageObject;
-import com.sun.source.tree.BreakTree;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
+import javax.swing.*;
 import java.util.List;
 
-@LastUpdatePoint("09.12.2023")
+@LastUpdatePoint("21.12.2023")
 public class TodayInWoWComponent extends AbstractPage implements PageObject
 {
     private final Locators locators;
@@ -95,6 +97,53 @@ public class TodayInWoWComponent extends AbstractPage implements PageObject
         }
     }
 
+    public WebElement getWorldBossTitle(String currentRealm)
+    {
+        switch (currentRealm)
+        {
+            case "NA" -> {
+                return locators.NADFWorldBossTitle;
+            }
+            case "EU" -> {
+                return locators.EUDFWorldBossTitle;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public List<WebElement> getWorldBossList(String currentRealm)
+    {
+        switch (currentRealm) {
+            case "NA" ->{
+                return locators.NABossList;
+            }
+            case "EU" ->{
+                return locators.EUBossList;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public void clickToFirstBossInList(String realm)
+    {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
+        Actions action = new Actions(webDriver);
+        switch (realm) {
+            case "NA" ->{
+                jsExecutor.executeScript("arguments[0].scrollIntoView();", locators.firstBossNA);
+                locators.firstBossNA.click();
+            }
+            case "EU" ->{
+                jsExecutor.executeScript("arguments[0].scrollIntoView();", locators.firstBossEU);
+                locators.firstBossEU.click();
+            }
+        }
+    }
+
     private class Locators extends AbstractLocators
     {
         public Locators()
@@ -131,5 +180,23 @@ public class TodayInWoWComponent extends AbstractPage implements PageObject
 
         @FindBy(xpath = "//section[contains(@id, \"EU-group-mythicaffix-line-\")]")
         List<WebElement> EUMythicAffixesList;
+
+        @FindBy(xpath = "//section[contains(@id, 'EU-group-epiceliteworlddf-line-')]")
+        List<WebElement> EUBossList;
+
+        @FindBy(xpath = "//section[contains(@id, 'US-group-epiceliteworlddf-line-')]")
+        List<WebElement> NABossList;
+
+        @FindBy(xpath = "//section[contains(@id, 'US')]//a[text()='DF World Boss']")
+        WebElement NADFWorldBossTitle;
+
+        @FindBy(xpath = "//section[contains(@id, 'EU')]//a[text()='DF World Boss']")
+        WebElement EUDFWorldBossTitle;
+
+        @FindBy(xpath = "//section[@id='EU-group-epiceliteworlddf-line-0']//a")
+        WebElement firstBossEU;
+
+        @FindBy(xpath = "//section[@id='US-group-epiceliteworlddf-line-0']//a")
+        WebElement firstBossNA;
     }
 }

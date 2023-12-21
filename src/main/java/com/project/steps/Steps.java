@@ -29,7 +29,7 @@ public class Steps
         Assert.assertTrue(element.isDisplayed());
 
         Allure.step("Check if 'string' is written correct");
-        Assert.assertEquals(woWHeadMainPage.todayInWoWComponent.selectString(realm).getText(), string);
+        Assert.assertEquals(woWHeadMainPage.todayInWoWComponent.selectWoWTokenString(realm).getText(), string);
 
         System.out.println(element.getText());
     }

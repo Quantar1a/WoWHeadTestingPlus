@@ -4,6 +4,7 @@ import com.project.pages.AbstractLocators;
 import com.project.pages.AbstractPage;
 import com.project.tools.annotations.LastUpdatePoint;
 import com.project.tools.classes.PageObject;
+import com.sun.source.tree.BreakTree;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,60 +22,78 @@ public class TodayInWoWComponent extends AbstractPage implements PageObject
 
     public WebElement selectSpecificRealm(String realm)
     {
-        WebElement switcher = null;
-        switch (realm)
-        {
-            case "NA" -> switcher = locators.NASwitcher;
-            case "EU" -> switcher = locators.EUSwitcher;
+        switch (realm) {
+            case "NA" -> {
+                return locators.NASwitcher;
+            }
+            case "EU" -> {
+                return locators.EUSwitcher;
+            }
+            default -> {
+                return null;
+            }
         }
-        return switcher;
     }
 
     public WebElement getTokenPrice(String realm)
     {
-        WebElement token = null;
-        switch (realm)
-        {
-            case "NA" -> token = locators.NATokenPrice;
-            case "EU" -> token = locators.EUTokenPrice;
+        switch (realm) {
+            case "NA" -> {
+                return locators.NATokenPrice;
+            }
+            case "EU" -> {
+                return locators.EUTokenPrice;
+            }
+            default -> {
+                return null;
+            }
         }
-        return token;
     }
 
-    public WebElement selectString(String realm)
+    public WebElement selectWoWTokenString(String realm)
     {
-        WebElement string = null;
-        switch (realm)
-        {
-            case "NA" -> string = locators.WOWTokenStringNA;
-            case "EU" -> string = locators.WOWTokenStringEU;
+        switch (realm) {
+            case "NA" -> {
+                return locators.WOWTokenStringNA;
+            }
+            case "EU" -> {
+                return locators.WOWTokenStringEU;
+            }
+            default -> {
+                return null;
+            }
         }
-        return string;
     }
 
     public WebElement getMythicPlusTitleText(String realm)
     {
-        WebElement title = null;
-        switch (realm)
-        {
-            case "NA" -> title = locators.mythicPlusAffixesNAText;
-            case "EU" -> title = locators.mythicPlusAffixesEUText;
+        switch (realm) {
+            case "NA" -> {
+                return locators.mythicPlusAffixesNAText;
+            }
+            case "EU" -> {
+                return locators.mythicPlusAffixesEUText;
+            }
+            default -> {
+                return null;
+            }
         }
-        return title;
     }
 
     public List<WebElement> getListOfMythicAffixes(String realm)
     {
-        List<WebElement> list = null;
-        switch (realm)
-        {
-            case "NA" -> list = locators.NAMythicAffixesList;
-            case "EU" -> list = locators.EUMythicAffixesList;
+        switch (realm) {
+            case "NA" -> {
+                return locators.NAMythicAffixesList;
+            }
+            case "EU" -> {
+                return locators.EUMythicAffixesList;
+            }
+            default -> {
+                return null;
+            }
         }
-        return list;
     }
-
-
 
     private class Locators extends AbstractLocators
     {
